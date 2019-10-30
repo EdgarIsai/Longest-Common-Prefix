@@ -1,7 +1,8 @@
-lista = ['alec', 'clonar', 'alex', 'cloro', 'ambiguo', 'ejemplo']
+# Can either show the longest comomon prefix or all possible prefixes
+lista = ['holo', 'hos', 'holo', 'cloro', 'hod', 'ha']
 prefijo = []
 prefijos_finales = []
-
+final = []
 for palabra in lista:
     prefijo_valido = 1
     if not prefijo:
@@ -84,14 +85,16 @@ for palabra in lista:
         # Agregamos el posible prefijo
         prefijos_finales.append(prefijo[0])
         prefijo = []
+        palabra = None
 
 # Limpia los prefijos finales para dejar prefijos validos
 if len(prefijos_finales) > 0:
     prefijos_finales.sort()
 
-    for n in range(len(prefijos_finales)-1):
-        if prefijos_finales[0] in prefijos_finales[1]:
-            prefijos_finales.pop(0)
+    # Uncomment this to retrieve longest common prefix
+    # for n in range(len(prefijos_finales)-1):
+    #     if prefijos_finales[0] in prefijos_finales[1]:
+    #         prefijos_finales.pop(0)
 
     print(list(dict.fromkeys(prefijos_finales)))
 else:
