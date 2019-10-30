@@ -1,4 +1,4 @@
-lista = ['alec', 's', 'alarma', 'asetat', 'alexis', 'alec']
+lista = ['alec', 'clonar', 'alex', 'cloro', 'ambiguo', 'ejemplo']
 prefijo = []
 prefijos_finales = []
 
@@ -93,6 +93,6 @@ if len(prefijos_finales) > 0:
         if prefijos_finales[0] in prefijos_finales[1]:
             prefijos_finales.pop(0)
 
-    print(prefijos_finales)
+    print(list(dict.fromkeys(prefijos_finales)))
 else:
     print("No existe el prefijo")
